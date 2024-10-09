@@ -1,4 +1,6 @@
 #!/bin/bash
+cargo install wasm-opt --locked # make sure wasm-opt is installed
+
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ROOTDIR="${SCRIPTPATH}/.."
 PKGDIR="${ROOTDIR}/aisdb"
@@ -51,7 +53,7 @@ npx vite build --outDir "${MAPDIR}/../dist_map"
 #zip -ru9 aisdb_web/dist_map.zip aisdb_web/dist_map/
 
 VITE_BINGMAPTILES=1 \
-VITE_TILESERVER=aisdb.meridian.cs.dal.ca \
+VITE_TILESERVER=a.tile.openstreetmap.org \
 VITE_DISABLE_SSL_DB=1 \
 VITE_DISABLE_STREAM=1 \
 VITE_AISDBHOST=localhost \

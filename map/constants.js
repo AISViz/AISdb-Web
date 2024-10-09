@@ -17,9 +17,9 @@ if (database_port === undefined) {
 }
 
 let tileserver_hostname = import.meta.env.VITE_TILESERVER;
-if (tileserver_hostname === undefined) {
-  console.log('tileserver hostname undefined, defaulting to localhost');
-  tileserver_hostname = 'localhost';
+if (tileserver_hostname === undefined || tileserver_hostname === null || tileserver_hostname === '') {
+  console.log('tileserver hostname undefined, defaulting to openstreetmap');
+  tileserver_hostname = 'https://a.tile.openstreetmap.org';
 }
 
 /**
